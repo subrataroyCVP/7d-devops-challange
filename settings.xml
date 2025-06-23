@@ -1,0 +1,40 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <localRepository>/home/ec2-user/.m2/repository</localRepository>
+  <interactiveMode>true</interactiveMode>
+  <usePluginRegistry>false</usePluginRegistry>
+  <offline>false</offline>
+  <pluginGroups>
+    <pluginGroup>org.springframework.boot</pluginGroup>
+  </pluginGroups>
+<servers>
+  <server>
+    <id>subrataroy-7d-devops-challange-cicd</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+</servers>
+<profiles>
+  <profile>
+    <id>subrataroy-7d-devops-challange-cicd</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>subrataroy-7d-devops-challange-cicd</id>
+        <url>https://subrataroy-273348327215.d.codeartifact.us-east-1.amazonaws.com/maven/7d-devops-challange-cicd/</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+<mirrors>
+  <mirror>
+    <id>subrataroy-7d-devops-challange-cicd</id>
+    <name>subrataroy-7d-devops-challange-cicd</name>
+    <url>https://subrataroy-273348327215.d.codeartifact.us-east-1.amazonaws.com/maven/7d-devops-challange-cicd/</url>
+    <mirrorOf>*</mirrorOf>
+  </mirror>
+</mirrors>
+  </settings>

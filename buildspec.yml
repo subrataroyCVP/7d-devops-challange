@@ -4,6 +4,13 @@ phases:
   install:
     runtime-versions:
       java: corretto8
+      commands:
+        - echo Installing Maven 3.9.6
+        - wget https://archive.apache.org/dist/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+        - tar xzvf apache-maven-3.9.6-bin.tar.gz
+        - mv apache-maven-3.9.6 /usr/local/maven
+        - ln -s /usr/local/maven/bin/mvn /usr/local/bin/mvn
+        - mvn --version
   pre_build:
     commands:
       - echo Initializing environment
@@ -11,6 +18,8 @@ phases:
 
   build:
     commands:
+      - echo Runnings Tests
+      - mvn -s settings.xml clean test -X
       - echo Build started on `date`
       - mvn -s settings.xml compile
   post_build:

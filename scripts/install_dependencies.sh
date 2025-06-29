@@ -1,4 +1,4 @@
-#!/bin.bash
+#!/bin/bash
 
 sudo yum install tomcat -y
 sudo yum -y install httpd

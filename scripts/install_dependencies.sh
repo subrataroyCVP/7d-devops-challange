@@ -12,5 +12,5 @@ sudo cat << EOF > /etc/httpd/conf/tomcat.conf
     ProxyPreserveHost On
     ProxyPass / http://localhost:8080/nextwork-7d-devops-project/
     ProxyPassReverse / http://localhost:8080/nextwork-7d-devops-project/
-<VirtualHost>
+</VirtualHost>
 EOF

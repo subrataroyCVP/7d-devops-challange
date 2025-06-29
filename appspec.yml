@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /target/nextwork-7d-devops-project.war
-    destination: /usr/local/tomcat/webapps/
+    destination: /usr/share/tomcat/webapps/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh

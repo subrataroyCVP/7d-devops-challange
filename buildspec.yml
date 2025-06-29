@@ -28,4 +28,6 @@ phases:
 artifacts:
   files:
     - target/nextwork-7d-devops-project.war
+    - appspec.yml
+    - scripts/**/*
   discard-paths: no

@@ -26,9 +26,8 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/tls/pr
 sudo cat << EOF > /etc/httpd/conf.d/tomcat-ssl.conf
 <VirtualHost *:443>
     ServerAdmin root@localhost
-    ServerName ec2-3-228-219-44.compute-1.amazonaws.com # <-- Replace with your EC2 Public DNS or domain
-    # ServerAlias app.subrataroy.com # <-- Uncomment if you plan to use a domain too
-
+    ServerName app.subrataroy.com
+    
     SSLEngine on
     SSLCertificateFile /etc/pki/tls/certs/apache-selfsigned.crt
     SSLCertificateKeyFile /etc/pki/tls/private/apache-selfsigned.key

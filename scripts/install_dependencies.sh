@@ -3,7 +3,7 @@
 sudo yum install tomcat -y
 sudo yum -y install httpd
 
-sudo cat << EOF > /etc/httpd/conf/tomcat.conf
+sudo cat << EOF > /etc/httpd/conf.d/tomcat.conf
 <VirtualHost *:80>
     ServerAdmin root@localhost
     ServerName app.subrataroy.com
